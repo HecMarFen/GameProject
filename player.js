@@ -25,6 +25,9 @@ class Player{
             this.x = width - 150
         }
         image(game.playerImage, this.x, this.y, this.width, this.height)
+        //keyIsDown(32){
+
+        }
     }
     left(){
         this.x -= 30

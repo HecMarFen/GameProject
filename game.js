@@ -11,6 +11,7 @@ class Game {
         this.turtle = []
         this.pizza = []
         this.bird = []
+        this.wind=[]
         this.score = 0;
     }
 
@@ -42,13 +43,14 @@ class Game {
             {src: loadImage("backgroundImages/beach1.png"), x: 0, y:0, speed:1}
         ]
         this.playerImage = loadImage("Crabby/Ground 02.png")
-        this.waterBottleImage = loadImage("trash/waterBottle.png")
-        this.beerImage = loadImage("trash/glassBeer.png")
+        this.waterBottleImage = loadImage("trash/waterBottle2.png")
+        this.beerImage = loadImage("trash/glassBeer3.png")
         this.beansImage = loadImage("trash/beansCan.png")
         this.fishImage = loadImage("animals/fish.png")
         this.turtleImage = loadImage("animals/turtle.png")
         this.pizzaImage = loadImage("trash/pizzaCarton.png")
         this.birdImage = loadImage("animals/bird.png")
+        this.windImage = loadImage("effects/wind.png")
     }
     draw(){
         clear()
@@ -110,7 +112,7 @@ class Game {
                 return true
             }
         })
-        if(frameCount % 580 === 0){
+        if(frameCount % 480 === 0 || frameCount % 485 === 0){
             this.turtle.push(new Turtle(this.turtleImage))
             console.log(this.turtle)
         }
@@ -138,7 +140,7 @@ class Game {
                 return true
             }
         })
-        if(frameCount % 550 === 0){
+        if(frameCount % 520 === 0){
             this.bird.push(new Bird(this.birdImage))
             console.log(this.bird)
         }

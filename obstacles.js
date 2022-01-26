@@ -6,7 +6,7 @@ class WaterBottle {
         this.height = 40;
         this.x = width;
         //substract the gaps from top to bottom add the bottom gap
-        this.y = random(175, 370) 
+        this.y = random(175, 340) 
         }
     collision(playerInfo){
 
@@ -65,7 +65,7 @@ class Beer {
             this.y = this.y + 0.01
         }else {
             this.x = this.x + 0.5
-            this.y = this.y + 1.25
+            this.y++
         }
         image(this.image, this.x, this.y, this.width, this.height)
     }
@@ -137,8 +137,6 @@ class Fish {
         }else{
             this.x = this.x + 3
         }
-
-        
         image(this.image, this.x, this.y, this.width, this.height)
     }
 }
@@ -147,8 +145,8 @@ class Turtle {
     constructor(image){
         this.score = 0
         this.image = image
-        this.width = 60;
-        this.height = 30;
+        this.width = 40;
+        this.height = 20;
         this.x = width;
         //substract the gaps from top to bottom add the bottom gap
         this.y = random(height - this.height, 500 ) 
