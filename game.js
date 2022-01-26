@@ -27,7 +27,7 @@ class Game {
         this.birdImage
         this.gameOver = false;
         this.gameWin = false;
-        this.gameStart = "preStart";
+        this.gameStart = false;
     }
     preload(){
         this.backgroundImagesStatic = [
@@ -57,72 +57,98 @@ class Game {
         this.pizzaImage = [
             loadImage("trash/pizzaCarton.png"), 
             loadImage("trash/pizzaCartonLeft.png"),
-            loadImage("trash/pizzacartonRight.png"),
+            loadImage("trash/pizzaCartonRight.png"),
             loadImage("trash/pizzaCartonDown.png")
         ]
         this.birdImage = loadImage("animals/bird.png")
         this.windImage = loadImage("effects/wind.png")
     }
-    winGame(){
-        if(this.score>=200){
+    wonGame(){
+        if(this.score >=200){
+            this.gameWin = true;
+            rectMode(CENTER);
+            fill(153, 255, 255);
+            rect(width/2, height/2, 490, 440);
+            rectMode(CENTER);
+            fill(255, 223, 128),
+            rect(width/2, height/2, 470, 420);
+            fill(230, 46, 0)
             textFont("Roboto")
-            fill("black")
-            textSize(width / 6)
-            text("VICTORY")
-            textSize(width/ 20)
-            text("CRABBY CLEANED THE BEACH; NOW IT CAN GET IN")
-            textSize(width / 10)
+            fill(230, 46, 0)
+            textSize(width / 20)
+            text("VICTORY", 310, 155)
+            textSize(width/35)
+            text("CRABBY CLEANED THE BEACH", 225, 255)
+            text("NOW IT IS SAVE TO GET IN", 255, 280)
+            textSize(width / 50)
             textFont("inconsolata")
-            text("PRESS SPACE TO PLAY AGAIN")
+            text("PRESS SPACE TO PLAY AGAIN", 295, 500)
+            image(this.playerImage, 370, 400)
         }
     }
     lostGame(){
+        //check the gamestatus
         if (this.score < 0){
+            this.gameOver = true;
+            //this.score.stop()
+            rectMode(CENTER);
+            fill(153, 255, 255);
+            rect(width/2, height/2, 490, 440);
+            rectMode(CENTER);
+            fill(255, 223, 128),
+            rect(width/2, height/2, 470, 420);
+            fill(230, 46, 0)
             textFont("Roboto")
-            fill("black")
-            textSize(width / 6)
-            text("GAME OVER")
-            textSize(width/ 20)
-            text("THE TRASH TOOK OVER THE BEACH, IT IS TOXIC TO SWIM IN")
-            textSize(width / 10)
+            fill(230, 46, 0)
+            textSize(width / 20)
+            text("GAME OVER", 285, 155)
+            textSize(width/ 35)
+            text("THE TRASH TOOK OVER THE BEACH", 205, 255)
+            text("IT IS TOXIC TO SWIM IN", 265, 280)
+            textSize(width / 50)
             textFont("inconsolata")
-            text("PRESS SPACE TO PLAY AGAIN")
+            text("PRESS SPACE TO PLAY AGAIN", 295, 500)
+            image(this.playerImage, 370, 400)
         }
     }
     draw(){
         clear()
         this.background.draw()
-        if(this.gameStart === "preStart"){
+        if(this.gameStart === false){
+            this.player.x = 100;
+            this.player.y=100
             rectMode(CENTER);
             fill(153, 255, 255);
-            rect(width/2, height/2, 390, 440);
+            rect(width/2, height/2, 490, 440);
             rectMode(CENTER);
             fill(255, 223, 128),
-            rect(width/2, height/2, 370, 420);
+            rect(width/2, height/2, 470, 420);
             fill(230, 46, 0)
             textFont("Roboto");
-            textSize(width/10);
-            text("CLEAN THE BEACH");
+            textSize(width/20);
+            text("CLEAN THE BEACH", 215, 155);
             textFont("sans-serif");
             textSize(width/40);
-            text("HELP CRABBY TO CLEAN THE BEACH");
-            text("COLLECT THE TRASH");
-            text("WATCH OUT; DO NOT GET EATEN BY OTHER ANIMALS");
-            textSize(width / 20);
+            text("HELP CRABBY CLEANING", 275, 255);
+            text("COLLECTING THE TRASH", 275, 280);
+            text("WATCH OUT; DO NOT GET", 275, 305);
+            text("EATEN BY OTHER ANIMALS", 270 ,330);
+            textSize(width / 50);
             textFont("inconsolata");
-            text("PRESS SPACE TO START CLEANING")
+            text("PRESS SPACE TO START PLAYING", 285, 500)
+            image(this.playerImage, 370, 400)
 
-            image(this.playerImage)
+            
             //insert image of crabby with effect??
             //if(frameCount % 2 === 0){
             //}
-        }else if(this.gameStart === "start"){
-            this.player.draw();
-        if(this.gameOver){
-            this.lostGame()
-        }
-        }
+        } else { 
+
+        this.wonGame()
+        this.lostGame()
+
         this.player.draw()
+        
         if(frameCount % 200 === 0){
             this.waterBottle.push(new WaterBottle(this.waterBottleImage))
             console.log(this.waterBottle)
@@ -223,4 +249,5 @@ class Game {
         })
         
     }
+}
 }

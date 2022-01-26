@@ -35,13 +35,8 @@ function keyPressed (){
     if(keyCode === 40 || keyCode === 89){
         game.player.back()
     }
-}
-
-function gameStatus(){
-    if(game.score < 0){
-
-    }
-    if(game.score > 200){
-
+    if(keyCode === 32){
+        game.gameStart = true;
     }
 }
+
