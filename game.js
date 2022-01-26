@@ -45,10 +45,16 @@ class Game {
         this.playerImage = loadImage("Crabby/Ground 02.png")
         this.waterBottleImage = loadImage("trash/waterBottle2.png")
         this.beerImage = loadImage("trash/glassBeer3.png")
-        this.beansImage = loadImage("trash/beansCan.png")
+        this.beansImage = [
+            loadImage("trash/beansCan.png"), loadImage("trash/beansCanLeft.png"),
+            loadImage("trash/beansCanRight.png"), loadImage("trash/beansCanDown")
+        ]
         this.fishImage = loadImage("animals/fish.png")
         this.turtleImage = loadImage("animals/turtle.png")
-        this.pizzaImage = loadImage("trash/pizzaCarton.png")
+        this.pizzaImage = [
+            loadImage("trash/pizzaCarton.png"), loadImage("trash/pizzaCartonLeft.png"),
+            loadImage("trash/pizzacartonRight.png"), loadImage("trash/pizzaCartonDown")
+        ]
         this.birdImage = loadImage("animals/bird.png")
         this.windImage = loadImage("effects/wind.png")
     }
