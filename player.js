@@ -1,8 +1,8 @@
 class Player{
     constructor(){
         // this.waterCurrent 
-        this.width = 190;
-        this.height = 95;
+        this.width = 170;
+        this.height = 85;
         this.x = (width - this.width)/ 2;
         this.y = height - this.height
 
@@ -15,14 +15,14 @@ class Player{
         if(this.y >= height - this.height){
             this.y = height - this.height
         }
-        if(this.y <= 180){
-            this.y = 180
+        if(this.y <= 160){
+            this.y = 160
         }
         if(this.x <= -45){
             this.x = -45
         }
-        if(this.x >= width - 150){
-            this.x = width - 150
+        if(this.x >= width - 133){
+            this.x = width - 133
         }
         image(game.playerImage, this.x, this.y, this.width, this.height)
         //keyIsDown(32){

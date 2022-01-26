@@ -37,14 +37,10 @@ function keyPressed (){
     }
 }
 
-function gameOver(){
+function gameStatus(){
     if(game.score < 0){
-        
 
     }
-}
-
-function winGame(){
     if(game.score > 200){
 
     }

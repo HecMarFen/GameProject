@@ -27,7 +27,7 @@ class WaterBottle {
     }
     draw(){
         this.x = this.x - 1.5
-        this.y = this.y + 0.2
+        this.y = this.y + 0.1
         image(this.image, this.x, this.y, this.width, this.height)
     }
 }
@@ -65,7 +65,7 @@ class Beer {
             this.y = this.y + 0.01
         }else {
             this.x = this.x + 0.5
-            this.y++
+            this.y = this.y + 0.75
         }
         image(this.image, this.x, this.y, this.width, this.height)
     }
@@ -76,11 +76,12 @@ class Beans {
     constructor(image){
         this.score = 0
         this.image = image
-        this.width = 20;
-        this.height = 40;
+        this.width = 30;
+        this.height = 30;
         this.x = width;
         //substract the gaps from top to bottom add the bottom gap
         this.y = random(height - this.height, 450) 
+        
     }
     collision(playerInfo){
 
@@ -100,7 +101,38 @@ class Beans {
         }
     }
     draw(){
-        this.x = this.x - 1.35
+        if(this.x <= 75){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[1]
+        } else if(this.x <= 150){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[0]
+        }else if(this.x <= 225){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[1]
+        }else if(this.x <= 300){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[0]
+        }else if(this.x <= 375){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[1]
+        }else if(this.x <= 450){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[0]
+        }else if(this.x <= 525){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[1]
+        }else if(this.x <= 600){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[0]
+        }else if(this.x <= 700){
+            this.x = this.x - 1.1
+            this.image = game.beansImage[1]
+        }else{
+            this.x = this.x - 1.1
+            this.image = game.beansImage[0]
+        }
+        
         image(this.image, this.x, this.y, this.width, this.height)
     }
 }
@@ -132,10 +164,12 @@ class Fish {
         }
     }
     draw(){
-        if(this.x < 400){
-            this.x = this.x + 1.5
-        }else{
-            this.x = this.x + 3
+        if(this.x < 220){
+            this.x = this.x + 1.7
+        }else if(this.x < 490) {
+            this.x = this.x + 3.4
+        } else{
+            this.x = this.x + 4.8
         }
         image(this.image, this.x, this.y, this.width, this.height)
     }
@@ -203,21 +237,27 @@ class Pizza {
     }
     draw(){
         if(this.x <= 100){
+            this.image = game.pizzaImage[2]
             this.x = this.x - 0.8
             this.y++
         }else if (this.x <= 200) {
+            this.image = game.pizzaImage[0]
             this.x--;
             this.y--
         }else if(this.x <= 380){
+            this.image = game.pizzaImage[1]
             this.x = this.x - 0.5
             this.y = this.y +1.2
         }else if(this.x <= 550){
+            this.image = game.pizzaImage[3]
             this.x = this.x - 1.2;
             this.y--
         }else if(this.x <= 700){
+            this.image = game.pizzaImage[2]
             this.x = this.x - 0.8
             this.y = this.y + 1.3
         }else{
+            this.image = game.pizzaImage[0]
             this.x--;
             this.y = this.y - 0.2
         }
