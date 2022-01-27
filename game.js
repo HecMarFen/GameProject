@@ -124,6 +124,8 @@ class Game {
             //text("YOU WERE EATEN BY ...")
             text("THE TRASH TOOK OVER THE BEACH", 205, 255)
             text("IT IS TOXIC TO SWIM IN", 265, 280)
+            textSize(width/ 30)
+            text("TRY AGAIN", 330, 315)
             textSize(width / 50)
             textFont("inconsolata")
             text("PRESS SPACE TO PLAY AGAIN", 295, 500)
@@ -162,10 +164,11 @@ class Game {
             text("CLEAN THE BEACH", 215, 155);
             textFont("sans-serif");
             textSize(width/40);
-            text("HELP CRABBY CLEANING", 275, 255);
-            text("COLLECTING THE TRASH", 275, 280);
-            text("WATCH OUT; DO NOT GET", 275, 305);
-            text("EATEN BY OTHER ANIMALS", 270 ,330);
+            text("HELP CRABBY CLEANING", 275, 230);
+            text("COLLECT ALL THE TRASH", 273, 255);
+            text("DON´T HURT OTHER ANIMALS", 253, 280);
+            text("WITH YOUR SHARP CLAWS", 270 ,305);
+            text("AVOID THE SEAGULL!!!", 295 ,330),
             textSize(width / 50);
             textFont("inconsolata");
             text("PRESS SPACE TO START PLAYING", 285, 500)
@@ -223,7 +226,7 @@ class Game {
                 return true
             }
         })
-        if(frameCount % 80 === 0){
+        if(frameCount % 75 === 0){
             this.fish.push(new Fish(this.fishImage))
             console.log(this.fish)
         }
