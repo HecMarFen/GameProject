@@ -45,15 +45,19 @@ class Game {
             {src: loadImage("backgroundImages/beach2.png"), x: 0, y:0, speed:1},
             {src: loadImage("backgroundImages/beach1.png"), x: 0, y:0, speed:1}
         ]
+        this.winImage = loadImage("backgroundImages/cover4.png")
         this.playerImage = loadImage("Crabby/Ground 02.png")
         this.playerImageDead = loadImage("Crabby/DeadCrabby.png")
         this.playerImageVictory = loadImage("Crabby/victory.png")
         this.waterBottleImage = loadImage("trash/waterBottle2.png")
+        this.waterBottleImageInit = loadImage("trash/waterbottle.png")
         this.beerImage = loadImage("trash/glassBeer3.png")
+        this.beerImageInit= loadImage("trash/glassBeer.png")
         this.beansImage = [
             loadImage("trash/beansCan1.png"),
             loadImage("trash/beansCanLeft1.png"),
         ]
+        this.beansImageInit = loadImage("trash/beansCanRight.png")
         this.fishImage = loadImage("animals/fish.png")
         this.turtleImage = loadImage("animals/turtle.png")
         this.pizzaImage = [
@@ -87,9 +91,9 @@ class Game {
             textFont("inconsolata")
             text("PRESS SPACE TO PLAY AGAIN", 295, 500)
             image(this.playerImageVictory, 240, 350, 170, 85)
+            image(this.winImage, 400,345, 125, 95 )
             //insert a nicer image of something related
             //image(this.controlsImage, 410, 360, 130, 65)
-            this.score = 200
             game.player.clear()
             game.reset
         }
@@ -118,8 +122,11 @@ class Game {
             textFont("inconsolata")
             text("PRESS SPACE TO PLAY AGAIN", 295, 500)
             image(this.playerImageDead, 240, 340, 180, 90)
-            image(this.controlsImage, 410, 360, 130, 65)
-            this.score = -100
+            image(this.pizzaImage[0], 420, 380, 60, 45)
+            image(this.beerImageInit, 470, 380)
+            image(this.waterBottleImageInit, 490, 370)
+            image(this.beansImageInit, 500, 400)
+            //image(this.controlsImage, 410, 360, 130, 65)
             game.player.clear()
             game.reset()
            

@@ -43,13 +43,15 @@ function keyPressed (){
 }
 
 function reset (){
-    this.waterBottle = []
-    this.beer = []
-    this.beans =[]
-    this.fish = []
-    this.turtle = []
-    this.pizza = []
-    this.bird = []
-    this.wind=[]
-    keyPressed()
+    game.setup()
+    /*game.waterBottle = []
+    game.beer = []
+    game.beans =[]
+    game.fish = []
+    game.turtle = []
+    game.pizza = []
+    game.bird = []
+    game.wind=[]
+    game()
+    */
 }
