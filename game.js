@@ -50,7 +50,7 @@ class Game {
         this.playerImageDead = loadImage("Crabby/DeadCrabby.png")
         this.playerImageVictory = loadImage("Crabby/victory.png")
         this.waterBottleImage = loadImage("trash/waterBottle2.png")
-        this.waterBottleImageInit = loadImage("trash/waterbottle.png")
+        this.waterBottleImageInit = loadImage("trash/waterBottle.png")
         this.beerImage = loadImage("trash/glassBeer3.png")
         this.beerImageInit= loadImage("trash/glassBeer.png")
         this.beansImage = [
