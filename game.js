@@ -46,6 +46,8 @@ class Game {
             {src: loadImage("backgroundImages/beach1.png"), x: 0, y:0, speed:1}
         ]
         this.playerImage = loadImage("Crabby/Ground 02.png")
+        this.playerImageDead = loadImage("Crabby/DeadCrabby.png")
+        this.playerImageVictory = loadImage("Crabby/victory.png")
         this.waterBottleImage = loadImage("trash/waterBottle2.png")
         this.beerImage = loadImage("trash/glassBeer3.png")
         this.beansImage = [
@@ -62,6 +64,7 @@ class Game {
         ]
         this.birdImage = loadImage("animals/bird.png")
         this.windImage = loadImage("effects/wind.png")
+        this.controlsImage = loadImage("effects/arrow-png.png")
     }
     wonGame(){
         if(this.score >=200){
@@ -83,7 +86,12 @@ class Game {
             textSize(width / 50)
             textFont("inconsolata")
             text("PRESS SPACE TO PLAY AGAIN", 295, 500)
-            image(this.playerImage, 370, 400)
+            image(this.playerImageVictory, 240, 350, 170, 85)
+            //insert a nicer image of something related
+            //image(this.controlsImage, 410, 360, 130, 65)
+            this.score = 200
+            game.player.clear()
+            game.reset
         }
     }
     lostGame(){
@@ -103,20 +111,24 @@ class Game {
             textSize(width / 20)
             text("GAME OVER", 285, 155)
             textSize(width/ 35)
+            //text("YOU WERE EATEN BY ...")
             text("THE TRASH TOOK OVER THE BEACH", 205, 255)
             text("IT IS TOXIC TO SWIM IN", 265, 280)
             textSize(width / 50)
             textFont("inconsolata")
             text("PRESS SPACE TO PLAY AGAIN", 295, 500)
-            image(this.playerImage, 370, 400)
+            image(this.playerImageDead, 240, 340, 180, 90)
+            image(this.controlsImage, 410, 360, 130, 65)
+            this.score = -100
+            game.player.clear()
+            game.reset()
+           
         }
     }
     draw(){
         clear()
         this.background.draw()
         if(this.gameStart === false){
-            this.player.x = 100;
-            this.player.y=100
             rectMode(CENTER);
             fill(153, 255, 255);
             rect(width/2, height/2, 490, 440);
@@ -136,7 +148,8 @@ class Game {
             textSize(width / 50);
             textFont("inconsolata");
             text("PRESS SPACE TO START PLAYING", 285, 500)
-            image(this.playerImage, 370, 400)
+            image(this.playerImage, 240, 350, 170, 85)
+            image(this.controlsImage, 410, 360, 130, 65)
 
             
             //insert image of crabby with effect??

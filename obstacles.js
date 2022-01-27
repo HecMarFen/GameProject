@@ -238,24 +238,72 @@ class Pizza {
     draw(){
         if(this.x <= 100){
             this.image = game.pizzaImage[2]
-            this.x = this.x - 0.8
+            this.x = this.x - 2
             this.y++
-        }else if (this.x <= 200) {
+        }else if (this.x <= 240) {
             this.image = game.pizzaImage[0]
             this.x--;
             this.y--
-        }else if(this.x <= 380){
+        }else if (this.x <= 260) {
             this.image = game.pizzaImage[1]
+            this.x--;
+            this.y = this.y - 0.5
+        }else if (this.x <= 300) {
+            this.image = game.pizzaImage[3]
+            this.x--;
+            this.y = this.y - 0.6
+        }else if (this.x <= 340) {
+            this.image = game.pizzaImage[2]
+            this.x--;
+            this.y = this.y - 0.8
+        }else if(this.x <= 380){
+            this.image = game.pizzaImage[0]
             this.x = this.x - 0.5
             this.y = this.y +1.2
-        }else if(this.x <= 550){
+        }else if(this.x <= 400){
+            this.image = game.pizzaImage[1]
+            this.x = this.x - 1.3
+            this.y = this.y +1.2
+        }else if(this.x <= 430){
+            this.image = game.pizzaImage[3]
+            this.x = this.x - 1.2
+            this.y = this.y +1.2
+        }else if(this.x <= 450){
+            this.image = game.pizzaImage[2]
+            this.x = this.x - 1.2
+            this.y = this.y +1.2
+        }else if(this.x <= 480){
+            this.image = game.pizzaImage[0]
+            this.x = this.x - 1.2
+            this.y = this.y +1.2
+        }else if(this.x <= 500){
+            this.image = game.pizzaImage[1]
+            this.x = this.x - 1.2
+            this.y--
+        }else if(this.x <= 520){
             this.image = game.pizzaImage[3]
             this.x = this.x - 1.2;
             this.y--
+        } else if(this.x <= 550){
+            this.image = game.pizzaImage[2]
+            this.x = this.x - 1.2;
+            this.y--
+        }else if(this.x <= 580){
+            this.image = game.pizzaImage[0]
+            this.x = this.x - 0.8
+            this.y = this.y + 1.3
+        }else if(this.x <= 630){
+            this.image = game.pizzaImage[1]
+            this.x = this.x - 0.8
+            this.y++
+        }else if(this.x <= 650){
+            this.image = game.pizzaImage[3]
+            this.x = this.x - 0.8
+            this.y++
         }else if(this.x <= 700){
             this.image = game.pizzaImage[2]
             this.x = this.x - 0.8
-            this.y = this.y + 1.3
+            this.y++
         }else{
             this.image = game.pizzaImage[0]
             this.x--;

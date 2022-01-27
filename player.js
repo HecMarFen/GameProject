@@ -3,8 +3,8 @@ class Player{
         // this.waterCurrent 
         this.width = 170;
         this.height = 85;
-        this.x = (width - this.width)/ 2;
-        this.y = height - this.height
+        this.x = 315;
+        this.y = 515;
 
     }
     draw(){
@@ -25,9 +25,6 @@ class Player{
             this.x = width - 133
         }
         image(game.playerImage, this.x, this.y, this.width, this.height)
-        //keyIsDown(32){
-
-        //}
     }
     left(){
         this.x -= 30

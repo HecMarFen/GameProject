@@ -18,6 +18,8 @@ function setup(){
 function draw(){
     clear()
     game.draw()
+    fill("black")
+    textSize(width/30)
     text("Score: " + game.score, 0, height )
     
 }
@@ -40,3 +42,14 @@ function keyPressed (){
     }
 }
 
+function reset (){
+    this.waterBottle = []
+    this.beer = []
+    this.beans =[]
+    this.fish = []
+    this.turtle = []
+    this.pizza = []
+    this.bird = []
+    this.wind=[]
+    keyPressed()
+}
