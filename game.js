@@ -108,7 +108,7 @@ class Game {
     lostGame(){
         //check the gamestatus
         if (this.score < 0){
-            this.gameOver = true
+            this.gameOver = true;
             rectMode(CENTER);
             fill(153, 255, 255);
             rect(width/2, height/2, 490, 440);
@@ -203,7 +203,7 @@ class Game {
             berliner.draw()
         })
         this.beer = this.beer.filter(berliner => {
-            if (berliner.collision(this.player) || berliner.x  > width){
+            if (berliner.collision(this.player) || berliner.x  < 0 - berliner.width){
                 return false
             } else {
                 return true

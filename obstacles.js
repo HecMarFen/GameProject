@@ -38,7 +38,7 @@ class Beer {
         this.image = image
         this.width = 20;
         this.height = 40;
-        this.x = 0 - this.width;
+        this.x = width;
         //substract the gaps from top to bottom add the bottom gap
         this.y = random(175, 250)
     }
@@ -60,12 +60,12 @@ class Beer {
         }
     }
     draw(){
-        if (this.x <= 680){
-            this.x = this.x + 0.75
-            this.y = this.y + 0.01
+        if (this.x <= 180){
+            this.x = this.x - 0.75
+            this.y = this.y + 0.5
         }else {
-            this.x = this.x + 0.5
-            this.y = this.y + 0.75
+            this.x = this.x - 0.8
+            this.y = this.y + 0.01
         }
         image(this.image, this.x, this.y, this.width, this.height)
     }
@@ -204,7 +204,7 @@ class Turtle {
     }
     draw(){
         this.x = this.x - 0.5
-        this.y = this.y - 0.05
+        this.y = this.y - 0.035
         image(this.image, this.x, this.y, this.width, this.height)
     }
 }
