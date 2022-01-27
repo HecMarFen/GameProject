@@ -1,22 +1,24 @@
 const game = new Game();
 
+//new p5.SoundFile("effects/ocean-wave-one")
 
 function preload(){
     game.preload()
-    //let sound = loadSound("effects/mixkit-sea-waves-loop-1196.wav")
-    
 }
 
 
 function setup(){
     createCanvas(800, 600)
-    //preload.sound.loop()
     game.setup()
     textFont("roboto")
     textSize(30)
     fill("black")
 }
 
+//function music(){
+   // let sound = loadSound("effects/ocean-wave-one")
+   // sound.loop()
+//}
 
 function draw(){
     clear()

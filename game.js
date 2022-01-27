@@ -58,7 +58,7 @@ class Game {
             loadImage("trash/beansCanLeft1.png"),
         ]
         this.beansImageInit = loadImage("trash/beansCanRight.png")
-        this.fishImage = loadImage("animals/fish.png")
+        this.fishImage = loadImage("animals/fish2.png")
         this.turtleImage = loadImage("animals/turtle.png")
         this.pizzaImage = [
             loadImage("trash/pizzaCarton.png"), 

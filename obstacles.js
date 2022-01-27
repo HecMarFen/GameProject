@@ -140,8 +140,8 @@ class Fish {
     constructor(image){
         this.score = 0
         this.image = image
-        this.width = 80;
-        this.height = 40;
+        this.width = 70;
+        this.height = 30;
         this.x = 0 - this.width;
         //substract the gaps from top to bottom add the bottom gap
         this.y = random(190, 370)

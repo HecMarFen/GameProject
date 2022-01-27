@@ -24,7 +24,7 @@ class Player{
         if(this.x >= width - 133){
             this.x = width - 133
         }
-        if (game.gameOver === false || game.gameWin === false){
+        if (game.gameOver === false){
             image(game.playerImage, this.x, this.y, this.width, this.height)
         }
         
