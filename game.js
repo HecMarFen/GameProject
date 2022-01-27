@@ -92,17 +92,23 @@ class Game {
             text("PRESS SPACE TO PLAY AGAIN", 295, 500)
             image(this.playerImageVictory, 240, 350, 170, 85)
             image(this.winImage, 400,345, 125, 95 )
-            //insert a nicer image of something related
-            //image(this.controlsImage, 410, 360, 130, 65)
-            game.player.clear()
-            game.reset
+            this.waterBottle = []
+            this.beer = []
+            this.beans =[]
+            this.fish = []
+            this.turtle = []
+            this.pizza = []
+            this.bird = []
+            this.wind=[]
+            this.player.x = -1000
+            this.player.y = -1000
+            noLoop()
         }
     }
     lostGame(){
         //check the gamestatus
         if (this.score < 0){
-            this.gameOver = true;
-            //this.score.stop()
+            this.gameOver = true
             rectMode(CENTER);
             fill(153, 255, 255);
             rect(width/2, height/2, 490, 440);
@@ -126,10 +132,18 @@ class Game {
             image(this.beerImageInit, 470, 380)
             image(this.waterBottleImageInit, 490, 370)
             image(this.beansImageInit, 500, 400)
-            //image(this.controlsImage, 410, 360, 130, 65)
-            game.player.clear()
-            game.reset()
-           
+            //game.player.clear()
+            this.waterBottle = []
+            this.beer = []
+            this.beans =[]
+            this.fish = []
+            this.turtle = []
+            this.pizza = []
+            this.bird = []
+            this.wind=[]
+            this.player.x = -1000
+            this.player.y = -1000
+            noLoop()
         }
     }
     draw(){
@@ -157,8 +171,6 @@ class Game {
             text("PRESS SPACE TO START PLAYING", 285, 500)
             image(this.playerImage, 240, 350, 170, 85)
             image(this.controlsImage, 410, 360, 130, 65)
-
-            
             //insert image of crabby with effect??
             //if(frameCount % 2 === 0){
             //}
@@ -267,7 +279,20 @@ class Game {
                 return true
             }
         })
-        
+        /*if(frameCount % 400 === 0){
+            this.wind.push(new Wind(this.windImage))
+            console.log(this.wind)
+        }
+        this.wind.forEach(function(windy){
+            windy.draw()
+        })
+        this.wind = this.wind.filter(windy => {
+            if(frameCount % 410 === 0){
+                return false
+            } else {
+                return true
+            }
+        }*/
     }
 }
 }

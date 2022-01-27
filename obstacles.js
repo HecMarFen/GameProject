@@ -351,3 +351,15 @@ class Bird {
         image(this.image, this.x, this.y, this.width, this.height)
     }
 }
+class Wind {
+    constructor(image){
+        this.x = 50
+        this.y = 50
+        this.image = image
+        this.width = 30
+        this.height = 30
+    }
+    draw(){
+        image(this.image, this.x, this.y, this.width, this.height)
+    }
+}

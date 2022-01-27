@@ -3,17 +3,20 @@ const game = new Game();
 
 function preload(){
     game.preload()
+    //let sound = loadSound("effects/mixkit-sea-waves-loop-1196.wav")
     
 }
 
 
 function setup(){
     createCanvas(800, 600)
+    //preload.sound.loop()
     game.setup()
     textFont("roboto")
     textSize(30)
     fill("black")
 }
+
 
 function draw(){
     clear()
@@ -40,11 +43,15 @@ function keyPressed (){
     if(keyCode === 32){
         game.gameStart = true;
     }
+    if (keyCode === 32){
+        reset()
+    }
 }
 
 function reset (){
-    game.setup()
-    /*game.waterBottle = []
+    game.gameOver = false
+    game.gameWin = false
+    game.waterBottle = []
     game.beer = []
     game.beans =[]
     game.fish = []
@@ -52,6 +59,10 @@ function reset (){
     game.pizza = []
     game.bird = []
     game.wind=[]
-    game()
-    */
+    game.timer
+    game.background
+    game.score = 0;
+    game.player.x = 315;
+    game.player.y = 515 
+    loop()
 }
